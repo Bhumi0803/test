@@ -1,0 +1,171 @@
+//run file node filename.js
+//factorial
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+const number = 5;
+const factorialResult = factorial(number);
+console.log(`The factorial of ${number} is ${factorialResult}.`);
+
+//fibonacii series
+
+function fibonacciSeries(n) {
+  const series = [0, 1]; // Initialize the series with the first two numbers
+  
+  for (let i = 2; i < n; i++) {
+    const num = series[i - 1] + series[i - 2]; // Calculate the next number
+    series.push(num); // Add the number to the series
+  }
+  
+  return series;
+}
+const length = 10;
+const fibSeries = fibonacciSeries(length);
+console.log(fibSeries);
+
+
+//Capital first each later of string
+function capitalizeTheFirstLetterOfEachWord(words) {
+   var separateWord = words.toLowerCase().split(' ');
+   for (var i = 0; i < separateWord.length; i++) {
+      separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+      separateWord[i].substring(1);
+   }
+   return separateWord.join(' ');
+}
+console.log(capitalizeTheFirstLetterOfEachWord("my name is John"));
+
+
+
+
+
+//count total number of  integer in array
+
+const arr = ["abc", "xyz", 25, "87", 42, "10"];
+
+let integerCount = 0;
+for (let i = 0; i < arr.length; i++) {
+  if (Number.isInteger(arr[i])) {
+    integerCount++;
+  }
+}
+
+console.log(`The total count of integers in the array is: ${integerCount}`);
+// if “” is use the this is string otherwise it is integer number
+
+
+//Email validation
+function validateEmail(email) {
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return emailRegex.test(email);
+}
+const email = "test@example.com";
+if (validateEmail(email)) {
+  console.log("Email is valid.");
+} else {
+  console.log("Email is invalid.");
+}
+
+
+//Phone number validation
+
+function validatePhoneNumber(phoneNumber) {
+  const phoneRegex = /^\d{10}$/;
+  return phoneRegex.test(phoneNumber);
+}
+const phoneNumber = "1234567890";
+if (validatePhoneNumber(phoneNumber)) {
+  console.log("Phone number is valid.");
+} else {
+  console.log("Phone number is invalid.");
+}
+
+
+//Print 1 to 15 If the number is divided by 3 print fizz If the number is divided by 5 print buzz If divided by both print fizz buzz
+
+for (let i = 1; i <= 15; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+
+//right trial pattern using java script
+
+const height = 5; // Specify the height of the triangle
+
+for (let i = 1; i <= height; i++) {
+  const row = '*'.repeat(i);
+  console.log(row);
+}
+
+
+
+//Reverse right trial pattern using java script
+const height = 5; // Specify the height of the triangle
+
+for (let i = height; i >= 1; i--) {
+  const row = '*'.repeat(i);
+  console.log(row);
+}
+
+//left trial pattern using java script
+
+const height = 5; // Specify the height of the triangle
+
+for (let i = 1; i <= height; i++) {
+  const spaces = ' '.repeat(height - i);
+  const stars = '*'.repeat(i);
+  console.log(spaces + stars);
+}
+
+//Reverse left trial pattern using java script
+
+const height = 5; // Specify the height of the triangle
+
+for (let i = height; i >= 1; i--) {
+  const spaces = ' '.repeat(height - i);
+  const stars = '*'.repeat(i);
+  console.log(spaces + stars);
+}
+
+//full diamond triangle using java script
+
+const height = 5; // Specify the height of the diamond
+
+// Upper half of the diamond
+for (let i = 1; i <= height; i++) {
+  let row = '';
+  for (let j = 1; j <= height - i; j++) {
+    row += ' ';
+  }
+  for (let k = 1; k <= 2 * i - 1; k++) {
+    row += '*';
+  }
+  console.log(row);
+}
+
+// Lower half of the diamond
+for (let i = height - 1; i >= 1; i--) {
+  let row = '';
+  for (let j = 1; j <= height - i; j++) {
+    row += ' ';
+  }
+  for (let k = 1; k <= 2 * i - 1; k++) {
+    row += '*';
+  }
+  console.log(row);
+}
+
